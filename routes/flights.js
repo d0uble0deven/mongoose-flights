@@ -3,8 +3,9 @@ var router = express.Router();
 var flightCtrl = require('../controllers/flights');
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.render('index',{title:'apples'});
-});
+
+router.get('/', flightCtrl.index);
+router.get('/new', flightCtrl.new);
+router.get('/:id', flightCtrl.show);
 
 module.exports = router;

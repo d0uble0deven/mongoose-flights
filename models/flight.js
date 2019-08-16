@@ -5,5 +5,14 @@ var Schema = mongoose.Schema;
 var flightSchema = new Schema({
     airline: String,
     flightNo: Number,
-    departs: '2020'
+    departs: String,
+    airport: String,
+    // arrival: [destinationSchema]
 });
+
+var destinationSchema = new Schema({
+    airport: String,
+    arrival: Date
+})
+
+ module.exports = mongoose.model('Flight', flightSchema);
