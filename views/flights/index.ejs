@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>index views</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <p>Welcome to flights</p>
-index.ejs
-  </body>
-</html>
+<table>
+<% flights.forEach(function(f) { %>
+  <tr>
+    <td><%= f.flightNo %></td>
+    <td><%= f.airport %></td>
+    <td><%= f.airline %></td>
+    <td><a href="/flights/<%= f._id %>">DETAILS</a></td>
+  </tr>
+  <% }); %>
+</table>
+
